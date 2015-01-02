@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Night Mode</string>
+    <string name="action_settings">Settings</string>
+    <string name="intro_text">When you plug in your phone after 10pm and before 6am we will automatically mute your phone.
+        \n\nYour phone will be unmuted when you unplug it.
+        \n\nIf you plug in your phone before 10pm, it will start muting at 10pm.
+        \n\nYou will still be able to hear your alarms.</string>
+    <string name="welcome_text">Welcome!</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+
+</resources>
