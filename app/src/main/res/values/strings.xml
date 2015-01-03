@@ -17,5 +17,10 @@
 
     <string name="enabled_mute">Ringer was muted by Night Mode</string>
     <string name="ringer_unmuted">Ringer was restored by Night Mode</string>
+    <string name="share">Share</string>
+
+    <string name="share_power_mute">
+        Check out Night Mode! It automatically mutes your phone at night! https://play.google.com/store/apps/details?id=com.osacky.nightmode</string>
+    <string name="share_picker">How do you want to share Night Mode?</string>
 
 </resources>

@@ -7,8 +7,6 @@ import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
@@ -50,10 +48,6 @@ public class WelcomeFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.inject(this, rootView);
         mTextSwitcher.setFactory(mFactory);
-        Animation in = AnimationUtils.loadAnimation(container.getContext(), R.anim.in_anim_from_right);
-        Animation out = AnimationUtils.loadAnimation(container.getContext(), R.anim.out_anim);
-        mTextSwitcher.setInAnimation(in);
-        mTextSwitcher.setOutAnimation(out);
         setUpSwitch();
         return rootView;
     }
