@@ -1,12 +1,17 @@
 package com.osacky.nightmode;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextSwitcher;
 import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 import com.osacky.nightmode.annotations.EnabledPref;
 import com.osacky.nightmode.prefs.BooleanPreference;
@@ -18,17 +23,22 @@ import butterknife.InjectView;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 public class WelcomeFragment extends Fragment {
 
     @InjectView(R.id.on_off_button) protected SwitchCompat mOnOffButton;
-    @InjectView(R.id.button_text) protected TextView mTextView;
+    @InjectView(R.id.red_warning) protected TextView mWarningText;
+    @InjectView(R.id.text_switcher) protected TextSwitcher mTextSwitcher;
 
     @Inject @EnabledPref BooleanPreference mEnabledPref;
 
-    @Override public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
         Dagger_FragmentComponent.builder()
-                .powerApplicationComponent(PowerApplication.get(getActivity()).getComponent())
+                .powerApplicationComponent(PowerApplication.get(activity).getComponent())
                 .fragmentModule(new FragmentModule())
                 .build()
                 .injectFragment(this);
@@ -39,6 +49,11 @@ public class WelcomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.inject(this, rootView);
+        mTextSwitcher.setFactory(mFactory);
+        Animation in = AnimationUtils.loadAnimation(container.getContext(), R.anim.in_anim_from_right);
+        Animation out = AnimationUtils.loadAnimation(container.getContext(), R.anim.out_anim);
+        mTextSwitcher.setInAnimation(in);
+        mTextSwitcher.setOutAnimation(out);
         setUpSwitch();
         return rootView;
     }
@@ -62,11 +77,26 @@ public class WelcomeFragment extends Fragment {
 
     private void setUpSwitch() {
         if (mEnabledPref.get()) {
-            mTextView.setText(R.string.on);
+            mTextSwitcher.setInAnimation(getActivity(), R.anim.in_anim_from_left);
+            mTextSwitcher.setText(getActivity().getString(R.string.on));
             mOnOffButton.setChecked(true);
+            mWarningText.setVisibility(GONE);
         } else {
-            mTextView.setText(R.string.off);
+            mTextSwitcher.setInAnimation(getActivity(), R.anim.in_anim_from_right);
+            mTextSwitcher.setText(getActivity().getString(R.string.off));
             mOnOffButton.setChecked(false);
+            mWarningText.setVisibility(VISIBLE);
         }
     }
+
+    private final ViewSwitcher.ViewFactory mFactory = new ViewSwitcher.ViewFactory() {
+
+        @Override
+        public View makeView() {
+            // Create a new TextView
+            TextView t = new TextView(WelcomeFragment.this.getActivity());
+            t.setTextAppearance(WelcomeFragment.this.getActivity(), R.style.TextAppearance_AppCompat_Title_Inverse);
+            return t;
+        }
+    };
 }

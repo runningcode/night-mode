@@ -19,9 +19,9 @@ public class PowerApplication extends Application {
             Timber.plant(new Timber.DebugTree());
             Utils.enableStrictMode();
         } else {
-            Crashlytics.start(this);
-            Crashlytics.setString("locale", Locale.getDefault().toString());
         }
+        Crashlytics.start(this);
+        Crashlytics.setString("locale", Locale.getDefault().toString());
 
         mComponent = Dagger_PowerApplicationComponent.builder()
                 .powerApplicationModule(new PowerApplicationModule(this))

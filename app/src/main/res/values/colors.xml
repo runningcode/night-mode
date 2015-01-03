@@ -4,4 +4,6 @@
     <color name="primary_dark">#0097A7</color>
     <color name="primary_light">#4DD0E1</color>
     <color name="accent">#FFEB3B</color>
+
+    <color name="warning_color">#D50000</color>
 </resources>

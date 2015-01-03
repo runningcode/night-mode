@@ -18,87 +18,87 @@ ADDED from AndroidManifest.xml:5:5
 	android:name
 		ADDED from AndroidManifest.xml:5:22
 uses-permission#android.permission.INTERNET
-ADDED from AndroidManifest.xml:7:5
+ADDED from AndroidManifest.xml:6:5
 	android:name
-		ADDED from AndroidManifest.xml:7:22
+		ADDED from AndroidManifest.xml:6:22
 application
-ADDED from AndroidManifest.xml:9:5
+ADDED from AndroidManifest.xml:8:5
 MERGED from com.android.support:appcompat-v7:21.0.3:16:5
 MERGED from com.android.support:support-v4:21.0.3:16:5
 	android:label
-		ADDED from AndroidManifest.xml:12:9
-	android:allowBackup
-		ADDED from AndroidManifest.xml:10:9
-	android:icon
 		ADDED from AndroidManifest.xml:11:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:9:9
+	android:icon
+		ADDED from AndroidManifest.xml:10:9
 	android:theme
+		ADDED from AndroidManifest.xml:12:9
+	android:name
 		ADDED from AndroidManifest.xml:13:9
-	android:name
-		ADDED from AndroidManifest.xml:14:9
 activity#com.osacky.nightmode.MainActivity
-ADDED from AndroidManifest.xml:16:9
+ADDED from AndroidManifest.xml:15:9
 	android:label
-		ADDED from AndroidManifest.xml:18:13
-	android:name
 		ADDED from AndroidManifest.xml:17:13
+	android:name
+		ADDED from AndroidManifest.xml:16:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:19:13
+ADDED from AndroidManifest.xml:18:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:20:17
+ADDED from AndroidManifest.xml:19:17
 	android:name
-		ADDED from AndroidManifest.xml:20:25
+		ADDED from AndroidManifest.xml:19:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:22:17
+ADDED from AndroidManifest.xml:21:17
 	android:name
-		ADDED from AndroidManifest.xml:22:27
+		ADDED from AndroidManifest.xml:21:27
 service#com.osacky.nightmode.AlarmLaterService
-ADDED from AndroidManifest.xml:26:9
+ADDED from AndroidManifest.xml:25:9
 	android:name
-		ADDED from AndroidManifest.xml:26:18
+		ADDED from AndroidManifest.xml:25:18
 receiver#com.osacky.nightmode.PowerBroadcastReceiver
-ADDED from AndroidManifest.xml:28:9
+ADDED from AndroidManifest.xml:27:9
 	android:name
-		ADDED from AndroidManifest.xml:28:19
+		ADDED from AndroidManifest.xml:27:19
 intent-filter#android.intent.action.ACTION_POWER_CONNECTED+android.intent.action.ACTION_POWER_DISCONNECTED
-ADDED from AndroidManifest.xml:29:13
+ADDED from AndroidManifest.xml:28:13
 action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from AndroidManifest.xml:29:17
+	android:name
+		ADDED from AndroidManifest.xml:29:25
+action#android.intent.action.ACTION_POWER_DISCONNECTED
 ADDED from AndroidManifest.xml:30:17
 	android:name
 		ADDED from AndroidManifest.xml:30:25
-action#android.intent.action.ACTION_POWER_DISCONNECTED
-ADDED from AndroidManifest.xml:31:17
-	android:name
-		ADDED from AndroidManifest.xml:31:25
 receiver#com.osacky.nightmode.RingerBroadcastReceiver
-ADDED from AndroidManifest.xml:35:9
+ADDED from AndroidManifest.xml:34:9
 	android:name
-		ADDED from AndroidManifest.xml:35:19
+		ADDED from AndroidManifest.xml:34:19
 intent-filter#android.media.RINGER_MODE_CHANGED
-ADDED from AndroidManifest.xml:36:13
+ADDED from AndroidManifest.xml:35:13
 action#android.media.RINGER_MODE_CHANGED
-ADDED from AndroidManifest.xml:37:17
+ADDED from AndroidManifest.xml:36:17
 	android:name
-		ADDED from AndroidManifest.xml:37:25
+		ADDED from AndroidManifest.xml:36:25
 receiver#com.osacky.nightmode.BootReceiver
-ADDED from AndroidManifest.xml:41:9
+ADDED from AndroidManifest.xml:40:9
 	android:name
-		ADDED from AndroidManifest.xml:41:19
+		ADDED from AndroidManifest.xml:40:19
 intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.action.QUICKBOOT_POWERON
-ADDED from AndroidManifest.xml:42:13
+ADDED from AndroidManifest.xml:41:13
 action#android.intent.action.BOOT_COMPLETED
+ADDED from AndroidManifest.xml:42:17
+	android:name
+		ADDED from AndroidManifest.xml:42:25
+action#android.intent.action.QUICKBOOT_POWERON
 ADDED from AndroidManifest.xml:43:17
 	android:name
 		ADDED from AndroidManifest.xml:43:25
-action#android.intent.action.QUICKBOOT_POWERON
-ADDED from AndroidManifest.xml:44:17
-	android:name
-		ADDED from AndroidManifest.xml:44:25
 meta-data#com.crashlytics.ApiKey
-ADDED from AndroidManifest.xml:48:9
+ADDED from AndroidManifest.xml:47:9
 	android:value
-		ADDED from AndroidManifest.xml:48:58
+		ADDED from AndroidManifest.xml:47:58
 	android:name
-		ADDED from AndroidManifest.xml:48:20
+		ADDED from AndroidManifest.xml:47:20
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:21.0.3:15:5

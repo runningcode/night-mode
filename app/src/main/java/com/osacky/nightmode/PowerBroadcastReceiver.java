@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
+import android.widget.Toast;
 
 import com.osacky.nightmode.annotations.EnabledPref;
 import com.osacky.nightmode.annotations.RingerMode;
@@ -68,7 +69,8 @@ public class PowerBroadcastReceiver extends BroadcastReceiver {
 //            if (ringerMode == RINGER_MODE_SILENT) {
 //                Timber.d("ringer mode is silent");
                 audioManager.setRingerMode(ringerModePref.get());
-            ringerModePref.delete();
+                ringerModePref.delete();
+            Toast.makeText(context, R.string.ringer_unmuted, Toast.LENGTH_SHORT).show();
 //            } else {
                 Timber.d("ringer mode is %s", ringerMode);
 //            }
