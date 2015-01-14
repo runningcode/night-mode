@@ -31,7 +31,7 @@ public class Utils {
     }
 
     public static boolean isConnected(Context context) {
-        Intent intent = context.registerReceiver(null, new IntentFilter(ACTION_BATTERY_CHANGED));
+        Intent intent = context.getApplicationContext().registerReceiver(null, new IntentFilter(ACTION_BATTERY_CHANGED));
         int plugged = intent.getIntExtra(EXTRA_PLUGGED, -1);
         return plugged == BATTERY_PLUGGED_AC || plugged == BATTERY_PLUGGED_USB;
     }
@@ -40,6 +40,6 @@ public class Utils {
         AudioManager audioManager = (AudioManager) context.getSystemService(AUDIO_SERVICE);
         ringerMode.set(audioManager.getRingerMode());
         audioManager.setRingerMode(RINGER_MODE_SILENT);
-        Toast.makeText(context, R.string.enabled_mute, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(context, R.string.enabled_mute, Toast.LENGTH_SHORT).show();
     }
 }

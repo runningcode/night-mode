@@ -70,7 +70,7 @@ public class PowerBroadcastReceiver extends BroadcastReceiver {
 //                Timber.d("ringer mode is silent");
                 audioManager.setRingerMode(ringerModePref.get());
                 ringerModePref.delete();
-            Toast.makeText(context, R.string.ringer_unmuted, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context, R.string.ringer_unmuted, Toast.LENGTH_SHORT).show();
 //            } else {
                 Timber.d("ringer mode is %s", ringerMode);
 //            }
